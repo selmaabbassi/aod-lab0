@@ -2,9 +2,10 @@ package se.hig.aod.lab0;
 
 /**
  * A LinkedList implementation of the Abstract Data Type List
+ *
  * @author Selma Abbassi
  */
-public class LinkedList<T> implements List<T> {
+public class LinkedList<T> implements PrintableList<T> {
 
     ListNode<T> head;
     private int numOfElements;
@@ -108,9 +109,32 @@ public class LinkedList<T> implements List<T> {
         }
     }
 
+    @Override
+    public String toStringRecursive() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("[");
+
+        if (!isEmpty()) {
+            builder = head.toStringNodeRecursive(builder);
+        }
+        
+        builder.append("]");
+        return builder.toString();
+    }
+
+    @Override
+    public String toStringReverseRecursive() {
+
+        //loopa från sista och till head??
+
+        return null;
+    }
+
     /**
      * Nested class @{@link ListNode} that stores data of generic type D and points to the next @{@link ListNode} in the @{@link LinkedList}
+     *
      * @param <D>
+     * @author Selma Abbassi
      */
     static class ListNode<D> {
         D data;
@@ -119,6 +143,22 @@ public class LinkedList<T> implements List<T> {
         public ListNode(D data, ListNode<D> next) {
             this.data = data;
             this.next = next;
+        }
+
+        /**
+         * Loops recursively from current node to all succeeding nodes and prints their data
+         *
+         * @return A string representation of the nodes
+         */
+        public StringBuilder toStringNodeRecursive(StringBuilder builder) {
+            if (next == null) {
+                return builder.append(data);
+            } else {
+                builder.append(data).append(",");
+                data = next.data;
+                next = next.next;
+                return toStringNodeRecursive(builder);
+            }
         }
     }
 }
