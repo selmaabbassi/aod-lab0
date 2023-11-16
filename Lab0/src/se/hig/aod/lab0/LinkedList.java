@@ -112,22 +112,29 @@ public class LinkedList<T> implements PrintableList<T> {
         @Override
         public String toStringRecursive() {
                 StringBuilder builder = new StringBuilder();
-                builder.append("[");
 
                 if (!isEmpty()) {
                         builder = head.toStringNodeRecursive(builder);
                 }
 
+                builder.insert(0, "[");
                 builder.append("]");
                 return builder.toString();
         }
 
         @Override
         public String toStringReverseRecursive() {
+                StringBuilder builder = new StringBuilder();
 
-                //loopa från sista och till head??
+                if (!isEmpty()) {
+                        builder = head.toStringNodeRecursive(builder);
+                        builder.reverse();
+                }
 
-                return null;
+                builder.insert(0, "[");
+                builder.append("]");
+
+                return builder.toString();
         }
 
         /**

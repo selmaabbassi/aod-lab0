@@ -232,6 +232,26 @@ class LinkedListTest {
                 assertEquals("[1,2,3,4,5]", listAsString);
         }
 
+        /**
+         * Test method for @{@link LinkedList#toStringReverseRecursive()}
+         */
+        @Test
+        void testToStringReverseRecursiveOnEmptyList() {
+                String listAsString = listUnderTest.toStringReverseRecursive();
+                assertEquals("[]", listAsString);
+        }
+
+        /**
+         * Test method for @{@link LinkedList#toStringReverseRecursive()}
+         */
+        @Test
+        void testToStringReverseRecursiveOnInitializedList() {
+                initializeList();
+
+                String listAsString = listUnderTest.toStringReverseRecursive();
+                assertEquals("[5,4,3,2,1]", listAsString);
+        }
+
         private void initializeList() {
                 for (int i = 0; i < fixture.length; i++) {
                         listUnderTest.insertLast(fixture[i]);
