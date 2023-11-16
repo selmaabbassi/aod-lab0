@@ -1,10 +1,8 @@
-package test.se.hig.aod.lab0;
+package se.hig.aod.lab0;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import se.hig.aod.lab0.LinkedList;
-import se.hig.aod.lab0.ListEmptyException;
 
 import static org.junit.jupiter.api.Assertions.*;
 

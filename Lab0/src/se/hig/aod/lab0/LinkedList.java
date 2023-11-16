@@ -1,5 +1,9 @@
 package se.hig.aod.lab0;
 
+/**
+ * A LinkedList implementation of the Abstract Data Type List
+ * @author Selma Abbassi
+ */
 public class LinkedList<T> implements List<T> {
 
     ListNode<T> head;
@@ -56,7 +60,7 @@ public class LinkedList<T> implements List<T> {
     @Override
     public T removeFirst() {
         if (isEmpty()) {
-            throw new ListEmptyException("List is empty");
+            throw new ListEmptyException("Removing first element from an empty list is not allowed");
         } else {
             head = head.next;
             numOfElements--;
@@ -67,7 +71,7 @@ public class LinkedList<T> implements List<T> {
     @Override
     public T removeLast() {
         if (isEmpty()) {
-            throw new ListEmptyException("List is empty");
+            throw new ListEmptyException("Removing last element from an empty list is not allowed");
         } else if (numOfElements == 1) {
             return removeFirst();
         } else {
@@ -104,7 +108,11 @@ public class LinkedList<T> implements List<T> {
         }
     }
 
-    class ListNode<D> {
+    /**
+     * Nested class @{@link ListNode} that stores data of generic type D and points to the next @{@link ListNode} in the @{@link LinkedList}
+     * @param <D>
+     */
+    static class ListNode<D> {
         D data;
         ListNode<D> next;
 
