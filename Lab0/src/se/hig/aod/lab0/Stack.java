@@ -33,6 +33,7 @@ public interface Stack<E> {
          * Adds an element on the top of this stack.
          *
          * @param element - the object added on the top of the stack.
+         * @throws @{@link StackFullException} if the stack is full.
          */
         public void push(E element);
 

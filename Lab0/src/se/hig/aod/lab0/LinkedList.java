@@ -1,7 +1,7 @@
 package se.hig.aod.lab0;
 
 /**
- * A LinkedList implementation of the Abstract Data Type List
+ * A LinkedList implementation of the Abstract Data Type @{@link List}
  *
  * @author Selma Abbassi
  */
