@@ -33,6 +33,7 @@ public interface Queue<E> {
          * Add an element at the last position in this queue.
          *
          * @param element added to this queue.
+         * @throws @{@link QueueFullException}
          */
         public void enqueue(E element);
 
